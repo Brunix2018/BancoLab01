@@ -13,6 +13,7 @@
     <string name="btnAcreditar">Acreditar en Cuenta</string>
     <string name="btnPlazo">Hacer Plazo Fijo</string>
     <string name="chkTerminos">Aceptar Términos y Condiciones</string>
-
+    <string name="lblAccionVencimientoRenovar">Renovar al Vencimiento</string>
+    <string name="lblAccionVencimientoAcreditar">Acreditar en Cuenta</string>
 
 </resources>

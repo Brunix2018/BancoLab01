@@ -18,11 +18,11 @@
         android:id="@+id/tvCorreo" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
         android:id="@+id/edtMail"
+        android:layout_width="341dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
         android:text="(Email)" />
 
     <TextView
@@ -32,10 +32,10 @@
         android:id="@+id/tvCuit" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
         android:id="@+id/edtCuit"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="number"
         android:text="(Number)" />
 
     <TextView
@@ -94,14 +94,16 @@
         android:id="@+id/seekDias" />
 
     <TextView
+        android:id="@+id/tvDiasSeleccionados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvDiasSeleccionados" />
+        android:text="Dias Seleecionados" />
 
     <TextView
+        android:id="@+id/tvIntereses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvIntereses" />
+        android:text="Intereses" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -127,6 +129,8 @@
         android:text="@string/btnAcreditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textOn="@string/lblAccionVencimientoRenovar"
+        android:textOff="@string/lblAccionVencimientoAcreditar"
         android:id="@+id/togAccion" />
 
     <CheckBox
@@ -145,6 +149,8 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="6"
         android:id="@+id/edtMensajes" />
 
 </LinearLayout>
