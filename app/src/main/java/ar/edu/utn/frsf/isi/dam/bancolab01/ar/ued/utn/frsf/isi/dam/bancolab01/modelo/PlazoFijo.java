@@ -1,5 +1,6 @@
 package ar.edu.utn.frsf.isi.dam.bancolab01.ar.ued.utn.frsf.isi.dam.bancolab01.modelo;
 
+import android.text.Editable;
 import android.util.Log;
 
 import java.util.Arrays;
@@ -48,6 +49,10 @@ public class PlazoFijo {
         this.monto = monto;
     }
 
+    public void setMonto(String monto) {
+        this.monto = Double.parseDouble(monto);
+    }
+
     public Boolean getRenovarAutomaticamente() {
         return renovarAutomaticamente;
     }
@@ -93,6 +98,26 @@ public class PlazoFijo {
                 '}';
     }
 
+    private Double calcularTasa(){
+        if (monto <=5000) {
+            if (dias < 30) return Double.valueOf(tasas[0]);
+            else return Double.valueOf(tasas[1]);
+        }
+        if (monto <=99999) {
+            if (dias < 30) return Double.valueOf(tasas[2]);
+            else return Double.valueOf(tasas[3]);
+        }
+        else {
+            if (dias < 30) return Double.valueOf(tasas[4]);
+            else return Double.valueOf(tasas[5]);
+        }
+    }
+
+
+    public Double intereses(){
+
+        return (Math.pow(((calcularTasa()/100)+1), (getDias()/360.0))-1)*monto;
+    }
 
 
 

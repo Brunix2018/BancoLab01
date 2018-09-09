@@ -23,7 +23,7 @@
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="(Email)" />
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="number"
-        android:text="(Number)" />
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,11 +73,10 @@
         android:id="@+id/tvMonto" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
         android:id="@+id/edtMonto"
-        android:text="(Number)" />
+        android:layout_width="361dp"
+        android:layout_height="33dp"
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,7 +88,8 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="365"
+        android:max="180"
+        android:min="10"
         android:progress="1"
         android:id="@+id/seekDias" />
 
@@ -97,13 +97,13 @@
         android:id="@+id/tvDiasSeleccionados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dias Seleecionados" />
+        />
 
     <TextView
         android:id="@+id/tvIntereses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Intereses" />
+         />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -118,7 +118,6 @@
             android:layout_weight="1" />
 
         <Switch
-            android:text="Switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/swAvisarVencimiento"
@@ -146,7 +145,6 @@
         android:id="@+id/btnHacerPF" />
 
     <TextView
-        android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

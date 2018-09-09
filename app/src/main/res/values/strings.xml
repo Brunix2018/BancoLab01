@@ -7,7 +7,7 @@
     <string name="lblMonedaPesos">AR$</string>
     <string name="lblMonto">Monto a Invertir</string>
     <string name="lblDias">Días</string>
-    <string name="lblCantidad">Cantidad de Dias</string>
+    <string name="lblCantidad"> días de plazo.</string>
     <string name="lblRendimiento">Rendimiento</string>
     <string name="lblAvisarVencimiento">Avisar por Mail antes del vencimiento</string>
     <string name="btnAcreditar">Acreditar en Cuenta</string>
@@ -15,5 +15,6 @@
     <string name="chkTerminos">Aceptar Términos y Condiciones</string>
     <string name="lblAccionVencimientoRenovar">Renovar al Vencimiento</string>
     <string name="lblAccionVencimientoAcreditar">Acreditar en Cuenta</string>
+    <string name="diasPlazo">Hacer Plazo Fijo</string>
 
 </resources>
