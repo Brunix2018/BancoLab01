@@ -16,5 +16,17 @@
     <string name="lblAccionVencimientoRenovar">Renovar al Vencimiento</string>
     <string name="lblAccionVencimientoAcreditar">Acreditar en Cuenta</string>
     <string name="diasPlazo">Hacer Plazo Fijo</string>
+    <string name="condiciones">Es obligatorio Aceptar las Condiciones</string>
+    <string name="ingreseMail">Ingrese un Mail.</string>
+    <string name="IngreseCuit">Ingrese un Cuit.</string>
+    <string name="ingreseMonto">Ingrese un Monto.</string>
+    <string name="ingreseMontoNoCero">Ingrese un Monto mayor a Cero.</string>
+    <string name="ingresePlazo">Ingrese plazo mayor a 10 Días.</string>
+    <string name="errorCrearPlazo">No se pudo crear el Plazo Fijo. Verifique los datos ingresados</string>
+    <string name="plzoExito">El plazo fijo se realizó exitosamente. Plazo fijo: Días =</string>
+    <string name="monto">, monto=</string>
+    <string name="veniento">, avisarVencimiento=</string>
+    <string name="renoAuto">, renovarAutomáticamente=</string>
+    <string name="moneda">; moneda=</string>
 
 </resources>

@@ -119,6 +119,12 @@ public class PlazoFijo {
         return (Math.pow(((calcularTasa()/100)+1), (getDias()/360.0))-1)*monto;
     }
 
+    public void setMonedaPesos(){
+        this.moneda = Moneda.PESO;
+    }
 
+    public void setMonedaDolar(){
+        this.moneda = Moneda.DOLAR;
+    }
 
 }

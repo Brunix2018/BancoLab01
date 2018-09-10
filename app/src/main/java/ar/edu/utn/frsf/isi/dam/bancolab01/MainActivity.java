@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText edtMail;
     private EditText edtCuit;
+    private RadioGroup optMoneda;
     private RadioButton optDolar;
     private RadioButton optPesos;
     private EditText edtMonto;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         edtMail= (EditText) findViewById(R.id.edtMail);
         edtCuit= (EditText) findViewById(R.id.edtCuit);
+        optMoneda = (RadioGroup) findViewById(R.id.optMoneda);
         optDolar= (RadioButton) findViewById(R.id.optDolar);
         optPesos= (RadioButton) findViewById(R.id.optPesos);
         edtMonto= (EditText) findViewById(R.id.edtMonto);
@@ -84,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         //oyentes
+
+
+        optMoneda.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (optPesos.isChecked()) pf.setMonedaPesos();
+                else pf.setMonedaDolar();
+            }
+        });
 
         seekDias.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -113,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                        CheckBox botoncheck = (CheckBox) compoundButton;
                 Toast popUp = Toast.makeText(getApplicationContext(),
-                                "Es obligatorio Aceptar las Condiciones", Toast.LENGTH_SHORT);
+                                R.string.condiciones, Toast.LENGTH_SHORT);
 
                        if (botoncheck.isChecked()) btnHacerPF.setEnabled(true);
                        else {
@@ -131,21 +144,21 @@ public class MainActivity extends AppCompatActivity {
                 String resultado="";
 
 
-                if (edtMail.getText().length()==0) resultado="Ingrese un Mail.";
-                if (edtCuit.getText().length()==0) resultado= resultado+"Ingrese un Cuit.";
-                if (edtMonto.getText().length()==0)  resultado= resultado+"Ingrese un Monto.";
-                else if (Integer.parseInt(edtMonto.getText().toString())==0) resultado= resultado+"Ingrese un Monto mayor a Cero.";
-                if (seekDias.getProgress()<10)  resultado= resultado+"Ingrese plazo mayor a 10 Días.";
+                if (edtMail.getText().length()==0) resultado=getString(R.string.ingreseMail);
+                if (edtCuit.getText().length()==0) resultado= resultado+getString(R.string.IngreseCuit);
+                if (edtMonto.getText().length()==0)  resultado= resultado+getString(R.string.ingreseMonto);
+                else if (Integer.parseInt(edtMonto.getText().toString())==0) resultado= resultado+getString(R.string.ingreseMontoNoCero);
+                if (seekDias.getProgress()<10)  resultado= resultado+getString(R.string.ingresePlazo);
                 if (resultado!= "") {
                     edtMensajes.setTextColor(Color.RED);
 
                     Toast popUp = Toast.makeText(getApplicationContext(),
-                            "No se pudo crear el Plazo Fijo. Verifique los datos ingresados", Toast.LENGTH_SHORT);
+                            R.string.errorCrearPlazo, Toast.LENGTH_SHORT);
                 } else
                     {
                         edtMensajes.setTextColor(Color.BLUE);
-                        resultado= "El plazo fijo se realizó exitosamente. Plazo fijo: Días ="+ pf.getDias().toString()+", monto="+pf.getMonto().toString()+
-                                ", avisarVencimiento="+String.valueOf(swAvisarVencimiento.isChecked())+", renovarAutomáticamente="+ String.valueOf(togAccion.isChecked())+"; moneda="+pf.getMoneda().toString();
+                        resultado= getString(R.string.plzoExito)+ pf.getDias().toString()+getString(R.string.monto)+pf.getMonto().toString()+
+                                getString(R.string.veniento)+String.valueOf(swAvisarVencimiento.isChecked())+getString(R.string.renoAuto)+ String.valueOf(togAccion.isChecked())+getString(R.string.moneda)+pf.getMoneda().toString();
 
                     }
                 edtMensajes.setText(resultado);
