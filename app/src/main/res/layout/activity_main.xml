@@ -76,7 +76,8 @@
         android:id="@+id/edtMonto"
         android:layout_width="361dp"
         android:layout_height="33dp"
-        android:inputType="number" />
+        android:inputType="number"
+        />
 
     <TextView
         android:layout_width="wrap_content"
