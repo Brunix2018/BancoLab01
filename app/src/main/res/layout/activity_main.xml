@@ -12,18 +12,19 @@
     tools:context="ar.edu.utn.frsf.isi.dam.bancolab01.MainActivity">
 
     <TextView
+        android:id="@+id/tvCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblMail"
-        android:id="@+id/tvCorreo" />
+        android:text="@string/lblMail" />
 
     <EditText
         android:id="@+id/edtMail"
-        android:layout_width="341dp"
-        android:layout_height="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        />
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,36 +35,46 @@
     <EditText
         android:id="@+id/edtCuit"
         android:layout_width="match_parent"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:inputType="number"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblMoneda"
-        android:id="@+id/tvMoneda" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:orientation="horizontal"
-        android:id="@+id/optMoneda">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <RadioButton
-            android:text="@string/lblMonedaDolar"
+        <TextView
+            android:id="@+id/tvMoneda"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/lblMoneda" />
+
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/optDolar"
-            android:layout_weight="1" />
+            android:orientation="horizontal"
+            android:id="@+id/optMoneda">
 
-        <RadioButton
-            android:text="@string/lblMonedaPesos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/optPesos"
-            android:layout_weight="1" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/optDolar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lblMonedaDolar"
+                android:textAppearance="@android:style/TextAppearance.Material.Small" />
+
+            <RadioButton
+                android:id="@+id/optPesos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lblMonedaPesos"
+                android:textAppearance="@android:style/TextAppearance.Material.Small" />
+        </RadioGroup>
+    </LinearLayout>
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,10 +85,10 @@
 
     <EditText
         android:id="@+id/edtMonto"
-        android:layout_width="361dp"
-        android:layout_height="33dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:inputType="number"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,25 +97,25 @@
         android:id="@+id/tvDias" />
 
     <SeekBar
+        android:id="@+id/seekDias"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="180"
         android:min="10"
-        android:progress="1"
-        android:id="@+id/seekDias" />
+        android:progress="1" />
 
     <TextView
         android:id="@+id/tvDiasSeleccionados"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
     <TextView
         android:id="@+id/tvIntereses"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -119,37 +130,39 @@
             android:layout_weight="1" />
 
         <Switch
+            android:id="@+id/swAvisarVencimiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/swAvisarVencimiento"
             android:layout_weight="1" />
     </LinearLayout>
 
     <ToggleButton
-        android:text="@string/btnAcreditar"
+        android:id="@+id/togAccion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textOn="@string/lblAccionVencimientoRenovar"
+        android:layout_height="35dp"
+        android:text="@string/btnAcreditar"
         android:textOff="@string/lblAccionVencimientoAcreditar"
-        android:id="@+id/togAccion" />
+        android:textOn="@string/lblAccionVencimientoRenovar" />
 
     <CheckBox
-        android:text="@string/chkTerminos"
+        android:id="@+id/chkAceptoTerminos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chkAceptoTerminos" />
+        android:text="@string/chkTerminos"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
     <Button
-        android:text="@string/btnPlazo"
+        android:id="@+id/btnHacerPF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnHacerPF" />
+        android:layout_height="35dp"
+        android:text="@string/btnPlazo" />
 
     <TextView
+        android:id="@+id/edtMensajes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:maxLines="6"
-        android:id="@+id/edtMensajes" />
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
 </LinearLayout>

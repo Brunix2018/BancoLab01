@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast popUp = Toast.makeText(getApplicationContext(),
                             R.string.errorCrearPlazo, Toast.LENGTH_SHORT);
+                    popUp.show();
                 } else
                     {
                         edtMensajes.setTextColor(Color.BLUE);

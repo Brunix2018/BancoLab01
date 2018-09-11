@@ -7,7 +7,7 @@
     <string name="lblMonedaPesos">AR$</string>
     <string name="lblMonto">Monto a Invertir</string>
     <string name="lblDias">Días</string>
-    <string name="lblCantidad"> días de plazo.</string>
+    <string name="lblCantidad">días de plazo.</string>
     <string name="lblRendimiento">Rendimiento</string>
     <string name="lblAvisarVencimiento">Avisar por Mail antes del vencimiento</string>
     <string name="btnAcreditar">Acreditar en Cuenta</string>
